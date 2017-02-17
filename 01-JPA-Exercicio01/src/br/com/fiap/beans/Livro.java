@@ -1,5 +1,6 @@
 package br.com.fiap.beans;
 
+import java.util.Arrays;
 import java.util.Calendar;
 
 import javax.persistence.Column;
@@ -82,5 +83,13 @@ public class Livro {
 	public void setCapa(byte[] capa) {
 		this.capa = capa;
 	}
+
+	@Override
+	public String toString() {
+		return "Livro [isbn=" + isbn + ", titulo=" + titulo + ", preco=" + preco + ", dtLancamento=" + dtLancamento
+				+ ", capa=" + Arrays.toString(capa) + "]";
+	}
+	
+	
 	
 }

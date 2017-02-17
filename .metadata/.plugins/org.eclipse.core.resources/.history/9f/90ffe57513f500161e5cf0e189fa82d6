@@ -1,0 +1,6 @@
+package br.com.fiap.dao;
+
+public interface BasicCRUD<k,obj> {
+	public void cadastrar(obj o);
+	public void 
+}	

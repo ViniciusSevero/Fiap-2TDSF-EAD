@@ -1,0 +1,7 @@
+package br.com.fiap.dao;
+
+import br.com.fiap.beans.Autor;
+
+public class AutorDAO implements BasicCRUD<Autor>{
+
+}

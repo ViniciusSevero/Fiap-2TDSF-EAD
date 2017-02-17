@@ -1,0 +1,47 @@
+package br.com.fiap.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import br.com.fiap.beans.Editora;
+
+public class EditoraDAO implements BasicCRUD<Editora> {
+
+private EntityManager manager;
+	
+	public AutorDAO(EntityManager manager) {
+		this.manager = manager;
+	}
+	
+	@Override
+	public void cadastrar(Editora o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Editora buscar(int key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void remover(Editora o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Editora> buscarTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void alterar(Editora o) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

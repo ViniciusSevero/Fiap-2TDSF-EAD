@@ -1,0 +1,16 @@
+package br.com.fiap.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import br.com.fiap.beans.Editora;
+import br.com.fiap.beans.Livro;
+
+public class LivroDAO implements BasicCRUD<Livro> {
+	private EntityManager manager;
+	
+	
+	
+	
+}
