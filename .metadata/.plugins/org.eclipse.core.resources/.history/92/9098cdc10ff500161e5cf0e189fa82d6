@@ -1,0 +1,10 @@
+package br.com.fiap.beans;
+
+public class Autor {
+	private int id;
+	private String id;
+	private String id;
+	private String id;
+	private dtNascimento id;
+	
+}

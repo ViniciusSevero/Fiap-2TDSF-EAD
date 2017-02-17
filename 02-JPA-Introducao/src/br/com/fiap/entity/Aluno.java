@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.PrePersist;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -112,7 +113,9 @@ public class Aluno {
 				+ senhaAtendimento + "]";
 	}
 	
-	
-	
+	@PrePersist
+	public void log(){
+		System.out.println("Cadastrando um aluno");
+	}
 	
 }

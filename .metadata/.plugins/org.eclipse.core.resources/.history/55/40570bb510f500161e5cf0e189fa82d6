@@ -1,0 +1,70 @@
+package br.com.fiap.beans;
+
+import java.util.Calendar;
+
+import javax.persistence.Entity;
+import javax.persistence.SequenceGenerator;
+
+@Entity
+@SequenceGenerator(sequenceName="seq_editora",name="seqEditora",allocationSize=1)
+public class Livro {
+	private int isbn;
+	private String titulo;
+	private double preco;
+	private Calendar dtLancamento;
+	private byte[] capa;
+	
+	public Livro() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Livro(int isbn, String titulo, double preco, Calendar dtLancamento, byte[] capa) {
+		super();
+		this.isbn = isbn;
+		this.titulo = titulo;
+		this.preco = preco;
+		this.dtLancamento = dtLancamento;
+		this.capa = capa;
+	}
+
+	public int getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(int isbn) {
+		this.isbn = isbn;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+	public Calendar getDtLancamento() {
+		return dtLancamento;
+	}
+
+	public void setDtLancamento(Calendar dtLancamento) {
+		this.dtLancamento = dtLancamento;
+	}
+
+	public byte[] getCapa() {
+		return capa;
+	}
+
+	public void setCapa(byte[] capa) {
+		this.capa = capa;
+	}
+	
+}
