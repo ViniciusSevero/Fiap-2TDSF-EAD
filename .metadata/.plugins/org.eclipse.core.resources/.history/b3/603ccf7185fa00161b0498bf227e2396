@@ -1,0 +1,46 @@
+package br.com.fiap.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TB_JOGO")
+@SequenceGenerator(sequenceName="SEQ_TB_JOGO",name="SEQ_TB_JOGO",allocationSize=1)
+public class Jogo {
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="SEQ_TB_JOGO")
+	private int codigo;
+	
+	@Column(nullable=false)
+	private String titulo;
+	
+	private int preco;
+	
+	private String genero;
+	
+	public Jogo() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Jogo(int codigo, String titulo, int preco, String genero) {
+		super();
+		this.codigo = codigo;
+		this.titulo = titulo;
+		this.preco = preco;
+		this.genero = genero;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Jogo [codigo=" + codigo + ", titulo=" + titulo + ", preco=" + preco + ", genero=" + genero + "]";
+	}
+	
+	
+}

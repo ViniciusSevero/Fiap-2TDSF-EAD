@@ -1,0 +1,24 @@
+package br.com.fiap.entity;
+
+public class Jogo {
+	private int codigo;
+	private String titulo;
+	private int preco;
+	private String genero;
+	
+	
+	public Jogo() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Jogo(int codigo, String titulo, int preco, String genero) {
+		super();
+		this.codigo = codigo;
+		this.titulo = titulo;
+		this.preco = preco;
+		this.genero = genero;
+	}
+	
+	
+}

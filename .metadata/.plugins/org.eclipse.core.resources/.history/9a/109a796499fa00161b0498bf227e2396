@@ -1,0 +1,38 @@
+package br.com.fiap.dao;
+
+import br.com.fiap.exception.CodigoInvalidoException;
+import br.com.fiap.exception.CommitErrorException;
+
+public class GenericDAOImpl<T,K> implements GenericDAO<T, K> {
+
+	@Override
+	public void cadastrar(T entidade) {
+		
+		
+	}
+
+	@Override
+	public void atualizar(T entidade) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void excluir(K codigo) throws CodigoInvalidoException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public T Buscar(K codigo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void commit() throws CommitErrorException {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

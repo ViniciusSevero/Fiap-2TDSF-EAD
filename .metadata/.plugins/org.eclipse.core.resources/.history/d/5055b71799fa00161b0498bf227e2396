@@ -1,0 +1,10 @@
+package br.com.fiap.dao;
+
+import br.com.fiap.exception.CodigoInvalidoException;
+
+public class GenericDAO<T,K> {
+	void cadastrar(T entidade);
+	vois atualizar(T entidade);
+	void excluir(K codigo) throws CodigoInvalidoException;
+	T Buscar(K codigo)
+}

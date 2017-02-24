@@ -1,0 +1,14 @@
+package br.com.fiap.dao;
+
+import br.com.fiap.entity.Jogo;
+import br.com.fiap.exception.CodigoInvalidoException;
+import br.com.fiap.exception.CommitErrorException;
+
+public interface JogoDAO extends GenericDAO<T, K> {
+/*	void cadastrar(Jogo jogo);
+	void atualizar(Jogo jogo);
+	void excluir(int codigo) throws CodigoInvalidoException;
+	Jogo buscar(int codigo);
+	void salvar() throws CommitErrorException;
+*/
+}

@@ -1,0 +1,23 @@
+package br.com.fiap.singleton;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class EntityManagerFacorySingleton {
+	//atributo estático
+	private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("CLIENTE_ORACLE");
+	private static EntityManager manager;
+	
+	//consrutor privado
+	private EntityManagerFacorySingleton() {
+		
+	}	
+	//getInstance
+	public EntityManager getInstance(){
+		if(manager == null){
+			manager = factory.createEntityManager();
+		}
+		return  manager;
+	}
+}

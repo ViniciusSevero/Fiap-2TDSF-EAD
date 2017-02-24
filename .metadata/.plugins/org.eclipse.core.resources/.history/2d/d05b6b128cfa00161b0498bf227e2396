@@ -1,0 +1,11 @@
+package br.com.fiap.singleton;
+
+import javax.persistence.EntityManagerFactory;
+
+public class EntityManagerFacorySingleton {
+	//atributo estático
+	private static EntityManagerFactory;
+	//consrutor privado
+	
+	//getInstance
+}

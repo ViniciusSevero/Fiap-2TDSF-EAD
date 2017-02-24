@@ -1,0 +1,56 @@
+package br.com.fiap.dao;
+
+import javax.persistence.EntityManager;
+
+import br.com.fiap.exception.CodigoInvalidoException;
+import br.com.fiap.exception.CommitErrorException;
+
+public class GenericDAOImpl<T,K> implements GenericDAO<T, K> {
+
+	private EntityManager manager;
+	private Class<T> genericClass; 
+	
+	public GenericDAOImpl(EntityManager manager) {
+		this.manager = manager;
+	}
+	
+	@Override
+	public void cadastrar(T entidade) {
+		manager.persist(entidade);	
+	}
+
+	@Override
+	public void atualizar(T entidade) {
+		manager.merge(entidade);	
+		
+	}
+
+	@Override
+	public void excluir(K codigo) throws CodigoInvalidoException {
+		K entidade = manager.find(genericClass.getClass() , k)
+		if(entidade == null){
+			throw new CodigoInvalidoException("Entity not found");
+		}
+		manager.remove(entidade);	
+	}
+
+	@Override
+	public T Buscar(K codigo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void commit() throws CommitErrorException {
+		try{
+			manager.getTransaction().begin();
+			manager.getTransaction().commit();
+		}catch(Exception e){
+			if(manager.getTransaction().isActive()){
+				manager.getTransaction().rollback();
+			}
+			throw new CommitErrorException("Erro");
+		}
+	}
+	
+}

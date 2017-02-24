@@ -1,0 +1,9 @@
+package br.com.fiap.singleton;
+
+public class EntityManagerFacorySingleton {
+	//atributo estático
+	
+	//consrutor privado
+	
+	//getInstance
+}
