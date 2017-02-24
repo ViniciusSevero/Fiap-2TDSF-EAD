@@ -1,7 +1,0 @@
-package br.com.fiap.dao;
-
-public class Autor {
-	public void cadastrar(Aluno a){
-		
-	}
-}

@@ -1,6 +1,0 @@
-package br.com.fiap.dao;
-
-public interface BasicCRUD<obj> {
-	public void cadastrar(obj o);
-	public void buscar(int key)
-}	

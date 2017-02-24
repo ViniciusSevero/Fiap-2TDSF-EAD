@@ -1,9 +1,0 @@
-package br.com.fiap.beans;
-
-public class Editora {
-	private int id;
-	private String id;
-	private String id;
-	private String id;
-	
-}

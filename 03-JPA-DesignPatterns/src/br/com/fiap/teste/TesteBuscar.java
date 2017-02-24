@@ -17,6 +17,8 @@ public class TesteBuscar {
 		JogoDAO dao = new JogoDAOImpl(manager);
 		Jogo jogo = dao.buscar(2);
 		System.out.println(jogo);
+		manager.close();
+		factory.close();
 	}
 
 }
