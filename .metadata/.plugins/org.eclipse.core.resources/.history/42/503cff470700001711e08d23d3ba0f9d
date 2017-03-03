@@ -1,0 +1,18 @@
+package br.com.fiap.entity;
+
+import java.util.Calendar;
+
+import javax.persistence.Entity;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TB_PROJETO_AM")
+@SequenceGenerator(name="SEQ_PROJETO_AM",sequenceName="SEQ_PROJETO_AM",allocationSize=1)
+public class Projeto {
+	private int codigo;
+	private String tema;
+	private String objetivo;
+	private Calendar dtInicio;
+	private Calendar dtTermino;
+}

@@ -1,0 +1,17 @@
+package br.com.fiap.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TB_GRUPO_AM")
+@SequenceGenerator(name="SEQ_GRUPO_AM",sequenceName="SEQ_GRUPO_AM",allocationSize=1)
+public class Grupo {
+	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="SEQ_GRUPO_AM")
+	private int codigo;
+	private String nome;
+}

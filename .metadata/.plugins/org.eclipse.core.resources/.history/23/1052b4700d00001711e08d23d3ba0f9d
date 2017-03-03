@@ -1,0 +1,9 @@
+package br.com.fiap.teste;
+
+import br.com.fiap.singleton.EntityManagerFactorySingleton;
+
+public class CadastroGupoProjetoTeste {
+	public static void main(String[] args) {
+		EntityManagerFactorySingleton.getInstance();
+	}
+}

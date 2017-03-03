@@ -1,0 +1,8 @@
+package br.com.fiap.teste;
+
+public class CadastroGupoProjetoTeste {
+	private void mai() {
+		// TODO Auto-generated method stub
+
+	}
+}

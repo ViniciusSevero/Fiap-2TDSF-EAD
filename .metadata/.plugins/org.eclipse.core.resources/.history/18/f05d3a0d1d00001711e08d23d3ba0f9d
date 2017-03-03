@@ -1,0 +1,41 @@
+package br.com.fiap.teste;
+
+import java.util.Calendar;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
+import br.com.fiap.dao.GenericDAO;
+import br.com.fiap.entity.Aluno;
+import br.com.fiap.singleton.EntityManagerFactorySingleton;
+
+public class CadastroAlunoGupoTeste {
+	public static void main(String[] args) {
+		EntityManagerFactory factory = EntityManagerFactorySingleton.getInstance();
+		EntityManager manager = factory.createEntityManager();
+		
+		GenericDAO<Aluno, Integer> projetoDao = new (manager);
+		GenericDAO<Grupo, Integer> projetoDao = new (manager);
+		
+		try{
+			Grupo g = new Grupo();
+			g.setNome("FOX");
+			//grupoDao.cadastrar(g);
+			
+			Projeto p = new Projeto();
+			p.setDtInicio(Calendar.getInstance());
+			p.setDtTermino(Calendar.getInstance());
+			p.setObjetivo("Programar");
+			p.setTema("Programação");
+			p.setGrupo(g);
+			projetoDao.cadastrar(p);
+			
+			projetoDao.salvar();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			manager.close();
+			factory.close();
+		}
+	}
+}
