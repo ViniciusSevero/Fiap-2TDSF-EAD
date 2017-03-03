@@ -3177,3 +3177,5 @@
 2017-03-03 11:25:47,845 [Worker-156] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\04-JPA-Relacionamenos\src\main\resources
 2017-03-03 11:25:47,845 [Worker-156] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-03-03 11:25:47,845 [Worker-156] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\04-JPA-Relacionamenos\src\test\resources
+2017-03-03 11:49:52,492 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@6519cd6a{HTTP/1.1,[http/1.1]}{127.0.0.1:0}
+2017-03-03 11:49:52,504 [Stop Help Server] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@f8a073a{/help,null,UNAVAILABLE}
