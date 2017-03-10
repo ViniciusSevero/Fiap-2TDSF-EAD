@@ -1,0 +1,7 @@
+package br.com.fiap.testes;
+
+import org.jboss.jandex.Main;
+
+public class Teste {
+	Main
+}

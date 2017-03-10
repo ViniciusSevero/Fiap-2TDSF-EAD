@@ -1,0 +1,18 @@
+package br.com.fiap.entity;
+
+import java.util.Calendar;
+
+import javax.persistence.Entity;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TB_TIME")
+@SequenceGenerator(sequenceName="SEQ_TIME",name="SEQ_TIME",allocationSize=1)
+public class Time {
+	private int codigo;
+	private String nome;
+	private Calendar dtFundacao;
+	private int nritulo;
+
+}

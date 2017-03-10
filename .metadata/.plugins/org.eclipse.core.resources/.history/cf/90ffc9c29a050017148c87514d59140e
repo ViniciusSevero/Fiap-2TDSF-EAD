@@ -1,0 +1,93 @@
+package br.com.fiap.entity;
+
+import java.util.Calendar;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name="TB_TIME")
+@SequenceGenerator(sequenceName="SEQ_TIME",name="SEQ_TIME",allocationSize=1)
+public class Time {
+	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_TIME")
+	@Column(name="CD_TIME")
+	private int codigo;
+	
+	@Column(name="NM_TIME", nullable=false)
+	private String nome;
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name="DT_FUNDACAO")
+	private Calendar dtFundacao;
+	
+	@Column(name="NR_ITULO")
+	private int nritulo;
+	
+	@OneToOne(cascade=CascadeType.PERSIST)
+	private Tecnico tecnico;
+
+	public Time() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Time(int codigo, String nome, Calendar dtFundacao, int nritulo, Tecnico tecnico) {
+		super();
+		this.codigo = codigo;
+		this.nome = nome;
+		this.dtFundacao = dtFundacao;
+		this.nritulo = nritulo;
+		this.tecnico = tecnico;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Calendar getDtFundacao() {
+		return dtFundacao;
+	}
+
+	public void setDtFundacao(Calendar dtFundacao) {
+		this.dtFundacao = dtFundacao;
+	}
+
+	public int getNritulo() {
+		return nritulo;
+	}
+
+	public void setNritulo(int nritulo) {
+		this.nritulo = nritulo;
+	}
+
+	public Tecnico getTecnico() {
+		return tecnico;
+	}
+
+	public void setTecnico(Tecnico tecnico) {
+		this.tecnico = tecnico;
+	}
+	
+	
+
+}

@@ -21,24 +21,27 @@ public class CadastroAlunoGupoTeste {
 		GenericDAO<Grupo, Integer> grupoDao = new GrupoDAO(manager);
 		
 		try{
-			Grupo g = new Grupo();
-			g.setNome("ABC");
-			grupoDao.cadastrar(g);
-			
 			Aluno a1 = new Aluno();
 			a1.setNome("Vinicius");
-			a1.setGrupo(g);
-			alunoDao.cadastrar(a1);
+			//a1.setGrupo(g);
+			//alunoDao.cadastrar(a1);
 			
 			Aluno a2 = new Aluno();
 			a2.setNome("Calébe");
-			a2.setGrupo(g);
-			alunoDao.cadastrar(a2);
+			//a2.setGrupo(g);
+			//alunoDao.cadastrar(a2);
 			
 			Aluno a3 = new Aluno();
 			a3.setNome("Kaio");
-			a3.setGrupo(g);
-			alunoDao.cadastrar(a3);
+			//a3.setGrupo(g);
+			//alunoDao.cadastrar(a3);
+			
+			Grupo g = new Grupo();
+			g.setNome("ABC");
+			g.addIntegrantes(a1);
+			g.addIntegrantes(a2);
+			g.addIntegrantes(a3);
+			grupoDao.cadastrar(g);
 			
 			alunoDao.salvar();
 		}catch(Exception e){

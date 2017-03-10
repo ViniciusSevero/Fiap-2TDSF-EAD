@@ -1,0 +1,17 @@
+package br.com.fiap.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TB_CAMPEONATO")
+@SequenceGenerator(sequenceName="SEQ_CAMPEONATO",name="SEQ_TB_CAMPEONATO",allocationSize=1)
+public class Campeonato {
+	@Id @GeneratedValue(generator="")
+	private int codigo;
+	private String nome;
+
+}

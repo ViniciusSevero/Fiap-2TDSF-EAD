@@ -1,0 +1,43 @@
+package br.com.fiap.testes;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
+import br.com.fiap.dao.GenericDAO;
+import br.com.fiap.dao.GenericDAOImpl;
+import br.com.fiap.entity.Jogador;
+import br.com.fiap.entity.Tecnico;
+import br.com.fiap.entity.Time;
+import br.com.fiap.singleton.EntityManagerFactorySingleton;
+
+public class Teste {
+	public static void main(String[] args) {
+		EntityManagerFactory factory = EntityManagerFactorySingleton.getInstance();
+		EntityManager manager = factory.createEntityManager();
+		
+		GenericDAO<Time, Integer> dao = new GenericDAOImpl<>(manager);
+		Time time = new Time();
+		time.setDtFundacao(Calendar.getInstance());
+		time.setNome("Time do Julião");
+		time.setNritulo(8000);
+		
+		List<Jogador> jogadores = new ArrayList<Jogador>();
+		jogadores.add(new Jogador(codigo, nome, time))
+		
+		time.setTecnico(new Tecnico(0,"Julião"));
+		
+	
+		try{
+			dao.salvar();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			manager.close();
+			factory.close();
+		}
+	}
+}

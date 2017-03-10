@@ -1,0 +1,34 @@
+package br.com.fiap.entity;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TB_CAMPEONATO")
+@SequenceGenerator(sequenceName="SEQ_CAMPEONATO",name="SEQ_CAMPEONATO",allocationSize=1)
+public class Campeonato {
+	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="SEQ_CAMPEONATO")
+	@Column(name="CD_CAMPEONATO")
+	private int codigo;
+	
+	@Column(name="NM_CAMPEONATO", nullable=false)
+	private String nome;
+	
+	@ManyToMany(cascade=CascadeType.PERSIST)
+	@JoinTable(name="TB_CAMPEONATO_TIME",
+			   joinColumns={@JoinColumn(name="CD_CAMPEONAO")},
+			   inverseJoinColumns={@JoinColumn(name="CD_DISCIPLINA")})
+	private List<Time> time;
+
+}

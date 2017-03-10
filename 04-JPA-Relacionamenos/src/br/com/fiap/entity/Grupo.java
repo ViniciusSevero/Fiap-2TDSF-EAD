@@ -1,5 +1,6 @@
 package br.com.fiap.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -29,8 +30,16 @@ public class Grupo {
 	@Column(name="NM_GRUPO",nullable=false,length=150)
 	private String nome;
 	
-	@OneToMany(mappedBy="grupo")
-	private List<Aluno> alunos;
+	@OneToMany(mappedBy="grupo",cascade=CascadeType.PERSIST)
+	private List<Aluno> alunos = new ArrayList<>();
+	
+	//método para adicionar alunos
+	public void addIntegrantes(Aluno aluno){
+		//Adiciona o aluno da lista de integrantes
+		alunos.add(aluno);
+		//setar o rupo do aluno
+		aluno.setGrupo(this);
+	}
 
 	public int getCodigo() {
 		return codigo;
