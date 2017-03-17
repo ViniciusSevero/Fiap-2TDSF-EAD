@@ -65,6 +65,8 @@ public class Time {
 		this.tecnico = tecnico;
 	}
 	
+	// para garantir que a relação existirá
+	//se eu cadastrar pelo time sem esse método, os jogadores não teram a referencia à esse time
 	public void cadastrarJogadores(Jogador jogador){
 		jogador.setTime(this);
 		this.jogadores.add(jogador);
