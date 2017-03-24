@@ -1,0 +1,16 @@
+package br.com.fiap.view;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
+import br.com.fiap.dao.EntityManagerFactorySingleton;
+import br.com.fiap.dao.impl.PacoteDAOImpl;
+
+public class ConsoleView {
+
+	public static void main(String[] args) {
+		EntityManager manager = EntityManagerFactorySingleton.getInstance().createEntityManager();
+		PacoteDAOImpl dao  = new PacoteDAOImpl(manager);
+	}
+
+}

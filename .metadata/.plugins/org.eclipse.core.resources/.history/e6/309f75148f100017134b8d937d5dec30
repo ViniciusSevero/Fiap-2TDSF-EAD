@@ -1,0 +1,9 @@
+package br.com.fiap.view;
+
+public class ConsoleViewCliente {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

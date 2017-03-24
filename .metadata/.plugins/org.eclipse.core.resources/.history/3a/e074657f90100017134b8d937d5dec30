@@ -1,0 +1,43 @@
+package br.com.fiap.view;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+
+import br.com.fiap.dao.ClienteDAO;
+import br.com.fiap.dao.EntityManagerFactorySingleton;
+import br.com.fiap.dao.ReservaDAO;
+import br.com.fiap.dao.impl.ClienteDAOImpl;
+import br.com.fiap.dao.impl.ReservaDAOImpl;
+import br.com.fiap.entity.Cliente;
+
+public class ConsoleViewCliente {
+
+	public static void main(String[] args) {
+		EntityManager em = EntityManagerFactorySingleton.getInstance().createEntityManager();
+		ClienteDAO dao = new ClienteDAOImpl(em);
+		ReservaDAO daoReserva = new ReservaDAOImpl(em);
+		
+		List<Cliente> all = dao.listar();
+		for (Cliente cliente : all) {
+			System.out.println(cliente.getNome());
+		}
+		
+		List<Cliente> sp = dao.buscarPoEstado("SP");
+		for (Cliente cliente : sp) {
+			System.out.println(cliente.getNome() + " | " + cliente.getEndereco().getCidade().getUf());
+		}
+		
+		List<Cliente> nrDias = daoReserva.buscarPorDias((int)Math.random() * 10);
+		for (Cliente cliente : nrDias) {
+			System.out.println(cliente.getNome());
+		}
+		
+		
+		
+		em.close();
+		System.exit(0);
+	}
+
+}

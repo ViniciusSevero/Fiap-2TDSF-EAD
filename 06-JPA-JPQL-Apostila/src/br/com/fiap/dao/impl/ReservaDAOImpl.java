@@ -1,0 +1,27 @@
+package br.com.fiap.dao.impl;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+import br.com.fiap.dao.ReservaDAO;
+import br.com.fiap.entity.Cliente;
+import br.com.fiap.entity.Reserva;
+
+public class ReservaDAOImpl extends GenericDAOImpl<Reserva,Integer> implements ReservaDAO {
+
+	public ReservaDAOImpl(EntityManager entityManager) {
+		super(entityManager);
+	}
+
+	@Override
+	public List<Cliente> buscarPorDias(int dias) {
+		//clietes que tenham pelo meos um pacote com esses dias 
+		Query query = em.createQuery("select c from Cliente c join fetch c.pacotes pacote where pacote.qtdDias = :nrDias", Cliente.class);
+		//Query query = em.createQuery("select r.cliente from Reserva r where reserva.numeroDias = :nrDias", Cliente.class);
+		query.setParameter("nrDias", dias);
+		return query.getResultList();
+	}
+
+}
