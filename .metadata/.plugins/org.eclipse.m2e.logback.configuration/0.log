@@ -8496,3 +8496,23 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact antlr:antlr:j
 2017-03-31 09:39:23,062 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\06-JPA-JPQL-Apostila\src\main\resources
 2017-03-31 09:39:23,063 [Worker-68] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-03-31 09:39:23,064 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\06-JPA-JPQL-Apostila\src\test\resources
+2017-03-31 09:51:11,941 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-31 09:51:11,942 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\03-JPA-DesignPatterns\src\main\resources
+2017-03-31 09:51:11,943 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-31 09:51:11,943 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\03-JPA-DesignPatterns\src\test\resources
+2017-03-31 09:51:11,949 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-31 09:51:11,950 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\04-JPA-Relacionamenos\src\main\resources
+2017-03-31 09:51:11,951 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-31 09:51:11,951 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\04-JPA-Relacionamenos\src\test\resources
+2017-03-31 09:51:11,959 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-31 09:51:11,959 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\05-Exercicio-Relacionamentos\src\main\resources
+2017-03-31 09:51:11,960 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-31 09:51:11,961 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\05-Exercicio-Relacionamentos\src\test\resources
+2017-03-31 09:51:11,966 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-31 09:51:11,967 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\06-Exercicio-Relacionamentos\src\main\resources
+2017-03-31 09:51:11,968 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-31 09:51:11,968 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\06-Exercicio-Relacionamentos\src\test\resources
+2017-03-31 09:51:11,974 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-31 09:51:11,974 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\06-JPA-JPQL-Apostila\src\main\resources
+2017-03-31 09:51:11,975 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-31 09:51:11,976 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Fiap-2TDSF-EAD\06-JPA-JPQL-Apostila\src\test\resources
