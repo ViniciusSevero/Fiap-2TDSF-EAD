@@ -1,0 +1,55 @@
+package br.com.fiap.dao.impl;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.StringJoiner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+import br.com.fiap.dao.ClienteDAO;
+import br.com.fiap.entity.Cliente;
+
+public class ClienteDAOImpl extends GenericDAOImpl<Cliente,Integer> implements ClienteDAO{
+
+	public ClienteDAOImpl(EntityManager entityManager) {
+		super(entityManager);
+	}
+
+	@Override
+	public List<Cliente> listar() {
+		return em.createQuery("from Cliente",Cliente.class).getResultList();
+	}
+
+	@Override
+	public List<Cliente> buscarPoEstado(String estado) {
+		Query query = em.createQuery("select c from Cliente c where c.endereco.cidade.uf = :uf", Cliente.class);
+		query.setParameter("uf", estado);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<Cliente> buscar(String nome, String cidade) {
+		Query query = em.createQuery("select c from Cliente c where c.nome = :nome and c.endereco.cidade.nome = :cidade", Cliente.class);
+		query.setParameter("nome", nome);
+		query.setParameter("cidade", cidade);
+		return query.getResultList();
+	}
+	
+	public List<Cliente> buscarPorEstados(Collection<String> estados){
+		//String states = Arrays.toString(estados.toArray()).replace("[","").replace("]","");
+		//System.out.println(states);
+		Query query = em.createQuery("select c from Cliente c where c.endereco.cidade.uf in(:states)", Cliente.class);
+		query.setParameter("states", estados);
+		return query.getResultList();
+	}
+	
+	public List<Cliente> buscarPorNome(String nome){
+		Query query = em.createQuery("select c from Cliente c where c.nome like :name", Cliente.class);
+		query.setParameter("name", "%"+nome+"%");
+		return query.getResultList();
+	}
+
+
+}

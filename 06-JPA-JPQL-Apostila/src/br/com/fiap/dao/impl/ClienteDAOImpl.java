@@ -38,12 +38,24 @@ public class ClienteDAOImpl extends GenericDAOImpl<Cliente,Integer> implements C
 	}
 	
 	public List<Cliente> buscarPorEstados(Collection<String> estados){
-		String states = Arrays.toString(estados.toArray()).replace("[","").replace("]","");
-		System.out.println(states);
+		//String states = Arrays.toString(estados.toArray()).replace("[","").replace("]","");
+		//System.out.println(states);
 		Query query = em.createQuery("select c from Cliente c where c.endereco.cidade.uf in(:states)", Cliente.class);
-		query.setParameter("states", states);
+		query.setParameter("states", estados);
 		return query.getResultList();
 	}
+	
+	public List<Cliente> buscarPorNome(String nome){
+		Query query = em.createQuery("select c from Cliente c where c.nome like :name", Cliente.class);
+		query.setParameter("name", "%"+nome+"%");
+		return query.getResultList();
+	}
+	
+	public long getQuantidadeClientes(){
+		Query query = em.createQuery("select count(c) from Cliente c", Long.class);
+		return (Long) query.getSingleResult();
+	}
+	
 
 
 }
