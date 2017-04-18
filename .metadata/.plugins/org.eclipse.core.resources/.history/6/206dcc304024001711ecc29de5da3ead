@@ -1,0 +1,60 @@
+package br.com.fiap.dao.impl;
+
+import java.util.Calendar;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+
+import br.com.fiap.dao.PacoteDAO;
+import br.com.fiap.entity.Pacote;
+import br.com.fiap.entity.Transporte;
+
+public class PacoteDAOImpl extends GenericDAOImpl<Pacote,Integer> implements PacoteDAO{
+
+	public PacoteDAOImpl(EntityManager entityManager) {
+		super(entityManager);
+	}
+
+	@Override
+	public List<Pacote> listar() {
+		TypedQuery<Pacote> query = em.createQuery("from Pacote",Pacote.class);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<Pacote> buscarPorPrecoMaximo(float preco) {
+		TypedQuery<Pacote> query = em.createQuery("select p from Pacote p where p.preco <= :preco",Pacote.class);
+		query.setParameter("preco", preco);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<Pacote> buscarPorTransporte(Transporte transporte) {
+		TypedQuery<Pacote> query = em.createQuery("select p from Pacote p where p.transporte = :t",Pacote.class);
+		query.setParameter("t", transporte);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<Pacote> buscarPoDatas(Calendar inicio, Calendar fim) {
+		TypedQuery<Pacote> query = em.createQuery("select p from Pacote p where p.dataSaida.time between (:ini, :fim)",Pacote.class);
+		query.setParameter(":ini", inicio.getTime());
+		query.setParameter(":fim", fim.getTime());
+		return query.getResultList();
+	}
+	
+	public double getPrecoMedio(){
+		Query query = em.createQuery("select avg(p.preco) from Pacote p", Double.class);
+		return (double) query.getSingleResult();
+	}
+	
+	public int buscarPoDatas(Calendar inicio, Calendar fim) {
+		Query query = em.createQuery("select count(p) from Pacote p where p.dataSaida.time between (:ini, :fim)",Integer.class);
+		query.setParameter(":ini", inicio.getTime());
+		query.setParameter(":fim", fim.getTime());
+		return (int) query.getSingleResult();
+	}
+
+}

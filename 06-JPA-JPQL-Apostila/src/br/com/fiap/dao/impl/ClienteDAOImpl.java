@@ -56,6 +56,12 @@ public class ClienteDAOImpl extends GenericDAOImpl<Cliente,Integer> implements C
 		return (Long) query.getSingleResult();
 	}
 	
+	public Cliente getClientePorCpf(String cpf){
+		return em.createNamedQuery("Cliente.porCpf",Cliente.class)
+					.setParameter("cpf", cpf)
+					.getSingleResult();
+	}
+	
 
 
 }

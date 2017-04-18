@@ -18,5 +18,6 @@ public interface ClienteDAO extends GenericDAO<Cliente,Integer>{
 	public List<Cliente> buscarPorNome(String nome);
 	
 	public long getQuantidadeClientes();
-	
+
+	public Cliente getClientePorCpf(String cpf);
 }
