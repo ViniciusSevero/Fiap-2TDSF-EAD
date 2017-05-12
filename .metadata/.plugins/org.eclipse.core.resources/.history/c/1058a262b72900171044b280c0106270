@@ -1,0 +1,62 @@
+package br.com.fiap.entity;
+
+import java.util.Calendar;
+
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="T_ALUGUEL")
+public class Aluguel {
+	@ManyToOne
+	@JoinColumn(name="CD_CLIENTE")
+	private Cliente cliente;
+	
+	@ManyToOne
+	@JoinColumn(name="CD_AUTOMOVEL")
+	private Automovel automovel;
+	
+	private Calendar dtAluguel;
+
+	
+	@Column(name="DT_RETORNO")
+	private Calendar dtRetorno;
+	
+	@Column(name="VL_ALUGUEL")
+	private Double vlAluguel;
+
+	public AluguelPK getPk() {
+		return pk;
+	}
+
+	public void setPk(AluguelPK pk) {
+		this.pk = pk;
+	}
+
+	public Calendar getDtRetorno() {
+		return dtRetorno;
+	}
+
+	public void setDtRetorno(Calendar dtRetorno) {
+		this.dtRetorno = dtRetorno;
+	}
+
+	public Double getVlAluguel() {
+		return vlAluguel;
+	}
+
+	public void setVlAluguel(Double vlAluguel) {
+		this.vlAluguel = vlAluguel;
+	}
+
+	@Override
+	public String toString() {
+		return "Aluguel [pk=" + pk + ", dtRetorno=" + dtRetorno + ", vlAluguel=" + vlAluguel + "]";
+	}
+	
+	
+}

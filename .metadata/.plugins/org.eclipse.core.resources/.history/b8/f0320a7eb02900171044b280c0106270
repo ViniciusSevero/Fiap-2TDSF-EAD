@@ -1,0 +1,13 @@
+package br.com.fiap.entity;
+
+import java.util.Calendar;
+
+import javax.persistence.Embeddable;
+
+@Embeddable
+public class AluguelPK {
+	private Cliente cliente
+	private Automovel automovel;
+	private Calendar dtAluguel
+	
+}

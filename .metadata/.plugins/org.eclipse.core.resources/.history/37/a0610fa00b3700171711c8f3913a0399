@@ -1,0 +1,52 @@
+package br.com.fiap.bean;
+
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+
+import br.com.fiap.bo.EstacionamentoBO;
+
+@ManagedBean
+public class EstacioamentoBean {
+	private int inicio, fim;
+	private double valoTotal;
+	
+	@EJB
+	private EstacionamentoBO bo;
+	
+	public void calcular(){
+		valoTotal = bo.calcularValor(inicio, fim);
+	}
+
+	public int getInicio() {
+		return inicio;
+	}
+
+	public void setInicio(int inicio) {
+		this.inicio = inicio;
+	}
+
+	public int getFim() {
+		return fim;
+	}
+
+	public void setFim(int fim) {
+		this.fim = fim;
+	}
+
+	public double getValoTotal() {
+		return valoTotal;
+	}
+
+	public void setValoTotal(double valoTotal) {
+		this.valoTotal = valoTotal;
+	}
+
+	public EstacionamentoBO getBo() {
+		return bo;
+	}
+
+	public void setBo(EstacionamentoBO bo) {
+		this.bo = bo;
+	}
+
+}

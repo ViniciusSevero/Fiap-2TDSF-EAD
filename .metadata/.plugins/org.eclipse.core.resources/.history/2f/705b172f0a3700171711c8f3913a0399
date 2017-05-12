@@ -1,0 +1,7 @@
+package br.com.fiap.bo.impl;
+
+import br.com.fiap.bo.EstacionamentoBO;
+
+public class EstacionametoBOImpl implements EstacionamentoBO {
+	
+}

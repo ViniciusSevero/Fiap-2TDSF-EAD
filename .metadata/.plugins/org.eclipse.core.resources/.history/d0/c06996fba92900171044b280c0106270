@@ -1,0 +1,14 @@
+package br.com.fiap.view;
+
+import java.util.Scanner;
+
+public class ConsoleViewAniversario {
+
+	private Scanner entrada = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

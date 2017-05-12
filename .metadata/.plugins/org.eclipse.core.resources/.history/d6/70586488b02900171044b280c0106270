@@ -1,0 +1,18 @@
+package br.com.fiap.entity;
+
+import java.util.Calendar;
+
+import javax.persistence.Embeddable;
+import javax.persistence.ManyToOne;
+
+@Embeddable
+public class AluguelPK {
+	@ManyToOne
+	private Cliente cliente;
+	
+	@ManyToOne
+	private Automovel automovel;
+	
+	private Calendar dtAluguel
+	
+}

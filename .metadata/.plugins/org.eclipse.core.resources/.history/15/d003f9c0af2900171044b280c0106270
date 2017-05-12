@@ -1,0 +1,15 @@
+package br.com.fiap.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="T_AUTOMOVEL")
+public class Automovel {
+	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE , generator="SEQ_AUTOMOVEL")
+	private int codigo;
+
+}

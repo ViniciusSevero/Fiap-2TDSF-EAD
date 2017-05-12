@@ -1,0 +1,16 @@
+package br.com.fiap.entity;
+
+import java.io.Serializable;
+import java.util.Calendar;
+
+
+public class AluguelPK implements Serializable {
+
+	private int cliente;
+	
+	private int automovel;
+	
+	private Calendar dtAluguel;
+
+	
+}

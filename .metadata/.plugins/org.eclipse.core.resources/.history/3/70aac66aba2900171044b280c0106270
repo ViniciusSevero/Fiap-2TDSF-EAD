@@ -1,0 +1,18 @@
+package br.com.fiap.teste;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
+import br.com.fiap.dao.AluguelDAO;
+import br.com.fiap.dao.EntityManagerFactorySingleton;
+import br.com.fiap.entity.AluguelDAOImpl;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		EntityManager em = EntityManagerFactorySingleton.getInstance();
+		AluguelDAO dao = new AluguelDAOImpl(em);
+
+	}
+
+}

@@ -1,0 +1,7 @@
+package br.com.fiap.entity;
+
+import br.com.fiap.dao.AluguelDAO;
+
+public class AluguelDAOImpl implements AluguelDAO {
+
+}
